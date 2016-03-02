@@ -1,12 +1,505 @@
-*.class
+package main;
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+import java.util.Random;
+import java.util.Scanner;
 
-# Package Files #
-*.jar
-*.war
-*.ear
+public class main {
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+	public static	int money = 20;
+    public static String again = "";
+    public static String again2 = "";
+    public static int completion = 0;
+    public static String destination = "";
+	public static int  darkelffate = 0;
+	public static String answer3 = "";
+	public static int completion1 = 0;
+	public static int healthpotion = 1;
+	public static int difference = 0;
+	public static int exp = 0;
+	public static int bet = 0;
+	public static int contestent = 0;
+	public static int arenawin = 0;
+	public static int quack = 0;
+	public static int quack2 = 0;
+	
+	public static void main (String[] args) {
+			// TODO Auto-generated method stub
+		   
+			
+			@SuppressWarnings("resource")
+			Scanner scanner = new Scanner(System.in);
+			System.out.println("play a game? y or n");
+		    String a = scanner.next();
+	        
+		    if(a .equals("no")){
+				System.out.println("why not");
+			}
+			else{
+				System.out.println("good whats your name");
+				String name = scanner.next();
+				System.out.println("What an interesting name " + "are you dwarf, human, or elf ");
+				String race = scanner.next();
+			if(race .equals("dwarf")){
+				System.out.println("short but mighty");
+			}
+			else{
+				if(race .equals("human")){
+							System.out.println("determained and fate driven");
+				}
+			else{
+				if(race .equals("elf")){
+					System.out.println("one with nature and good with a bow");
+				}
+				else{
+					System.out.println("really?");
+				}
+			}
+			}
+				System.out.println("Welcome to the world of Narelia " + name + " the " + race);
+				System.out.println("Now the world of Narelia has much too explore but before you do that we need to find out some stats about you." + "\n");
+				
+			
+				Random randomGenerator = new Random();
+				for(int idx = 0; idx < 1; ++idx){
+					int Health = randomGenerator.nextInt(7) + 3;
+					int stamina = randomGenerator.nextInt(9) + 1;
+					int strength = randomGenerator.nextInt(9) + 1;
+					int wisdom = randomGenerator.nextInt(9) + 1;
+					int popularity = randomGenerator.nextInt(9) + 1;
+					int health = Health;
+					
+					
+					System.out.println("Your Health is " + Health);
+					System.out.println("Your Stamina is " + stamina);
+					System.out.println("Your strength is " + strength);
+					System.out.println("Your wisdom is " + wisdom);
+					System.out.println("Your popularity is " + popularity + "\n");
+					System.out.println("Your Journey starts now in the city of Vernir, a peace filled small city with kind human folk." + "\n" + "You have come to this land from your own to seek riches and fame, " + "\n" + "But you also came here to get away from a dark past");
+					System.out.println("In your inventory you have your basic leather adventurers armour, a dagger, one health potion, and twenty gold coins" + "\n" + "This town has three places of interest, the Shop where things can be purchased, the town hall where you can ask about quests, the slots for gambling, the brothel...for Will, and the Gate where you can leave." + "\n" + "Where to first?");
+					
+					String answer1 = "";
+					
+					
+					do{
+					do{	
+						System.out.println("where in town would you like to go");
+					answer1 = scanner.next();
+					
+					if (answer1 .equals("brothel")){
+						System.out.println("The brothel is a social hub where you can purcahse ale and talk to town folk" + "\n" + "ale costs $10, what shall you do ....talk or shop?");
+						String brothel = scanner.next();
+						if (brothel .equals("shop")){
+							System.out.println("you purchasd one ale");
+							money -= 10;
+						}
+						else{
+							if(brothel .equalsIgnoreCase("talk")){
+								System.out.println("there are three people in the brothel, 1. a shady hooded figure in the corner, 2. a barmaid, and 3. a bizzare looking old man." + "\n" + "who will you talk to?");
+								int talk = scanner.nextInt();
+								if (talk == 1){
+									System.out.println("you");
+								}
+							}
+						}
+					}
+					
+					if(answer1 .equals("shop")){
+						System.out.println("You enter the shop and read the menu" + "\n" + "1. Health Potion = 10" + "\n" + "2. strengthened leather armour = 20" + "\n" + "3. Iron Longsword = 30");
+						int answer2 = scanner.nextInt();
+						if(answer2 == 1){
+							money -= 10;
+							if(money >= 0){
+								System.out.println("done" + " $" + money);
+								++healthpotion;
+							}
+							else{
+								System.out.println("not enough funds");
+						}
+					}
+						
+						else{
+							if(answer2 == 2){
+								money -= 20;
+								if(money >= 0){
+									System.out.println("done" + " $" + money);
+								}
+								else{
+									System.out.println("not enough funds");
+							}
+						}
+							else{
+								if(answer2 == 3){
+									money -= 30;
+									if(money >= 0){
+										
+										System.out.println("done" + " $" + money);
+									}
+									else{
+										System.out.println("not enough funds");
+								}System.out.println(money);
+							}
+			}
+			}
+						}
+					
+					else
+						if(answer1 .equals("townhall")){
+							System.out.println("There is one quest" + "\n" + "1. Kill three  bunnies");
+						 int answer3 = scanner.nextInt();
+							if(answer3 == 1 && completion >= 3){
+							System.out.println("congratulations, your sooooooo strong..... heres your $100");
+							System.out.println("seeing as how there is not much more for you here you should head to next town over Borgus" + "\n" + "you also leveled up and gained 10 health" + "\n" + "also kill a bunny for the trails");
+							money += 100;
+							health += 10;
+							System.out.println(money);
+						}
+							
+								else{
+								if (answer3 == 1){
+									System.out.println("good go to the gate and go to bunny trails");	
+							}
+						}
+						}
+						else{
+							if(answer1 .equalsIgnoreCase("slots")){
+								do{
+								Random randomGenerator2 = new Random();
+								{
+									money -= 1.5;
+									int wheel1 = randomGenerator2.nextInt(4) + 1;
+									int wheel2 = randomGenerator2.nextInt(4) + 1;
+									int wheel3 = randomGenerator2.nextInt(4) + 1;
+									System.out.println(wheel1 + "" + wheel2 + "" + wheel3 );
+									System.out.println("Play again? y or n");
+									again = scanner.next();
+									
+									if(wheel1 == wheel2 && wheel2 == wheel3){
+										money += 100;
+									}
+							}
+							System.out.println("balance = " + money);	
+							}
+								
+								while (money > 0 && again .equals("y"));
+							}
+							
+							else{
+								if(answer1 .equals("gate")){
+									System.out.println("where to?");
+																	}
+							}
+						}
+					} while (!answer1.equals("gate")); 
+					int bunnyhealth = 10;
+					int bunnyHealth = bunnyhealth;
+					
+				
+					destination = scanner.next();
+					if(destination .equals("bunnytrails")){
+						do{
+						System.out.println("A wild bunny appears. Attack? y or n");
+						String Attack = scanner.next();
+						if (Attack .equals("y")){
+						do{
+							int bunnydamage = randomGenerator.nextInt(1) + 1;
+							int playerdamage = randomGenerator.nextInt(7) + 1;
+							
+							System.out.println("you have three options" + "\n" + " 1. attack" + "\n"	+ "2. block" + "\n" + "3. heal");
+							int attack = scanner.nextInt();
+							switch (attack){
+							case(1):System.out.println("you hit the bunny for" + playerdamage);
+								bunnyhealth -= playerdamage;
+								break;
+							case(2):System.out.println("you skip your attack to brace yourself greatly reducing damage taken");
+							bunnydamage -= 2;
+								break;
+							case(3):if(healthpotion > 0){
+								System.out.println("you heal for five points of health");
+								Health += 5;
+								--healthpotion;
+								if (Health > health);
+								difference = Health - health;
+								Health -= difference;
+							}
+							else{
+								System.out.println("you have no health potions");
+							}
+							break;
+							}
+							System.out.println("bunny hits you for " + bunnydamage);
+							Health -= bunnydamage;
+							System.out.println("your health is " + Health + "\n" + "bunnys health is " + bunnyhealth);
+							
+						}while(Health > 0 && bunnyhealth > 0);
+						++completion;
+						int expbunny = randomGenerator.nextInt(1) + 1;
+						exp += expbunny;
+						System.out.println("Bunnys killed = " + completion);
+						Health = health;
+						bunnyhealth = bunnyHealth;
+						System.out.println("Stay in bunnytrails? y or n");
+		
+						 
+					}
+						again2 = scanner.next();
+			}while(!again2 .equals("n"));
+					}	
+					System.out.println(again2);
+					System.out.println(completion);
+	
+					}while(completion < 4);
+					
+					System.out.println("to borgus? y or n");
+					destination = scanner.next();
+					
+					if(destination .equals("y")){
+						System.out.println("the path will be long and dangerous be prepared" + "\n" + "suddenly you get ambushed by thugs");
+						
+						int thughealth = 25;
+						int thugHealth = thughealth;
+						
+						for(int i = 0; i < 2; ++i){
+							do{
+							int thugdamage = randomGenerator.nextInt(4) + 1;
+							int playerdamage = randomGenerator.nextInt(11) + 1;
+							
+							System.out.println("you have three options 1. attack" + "\n"	+ "2. block" + "\n" + "3. heal");
+							int attack = scanner.nextInt();
+							switch (attack){
+							case(1):System.out.println("you hit the thug for" + playerdamage);
+								thughealth -= playerdamage;
+								break;
+							case(2):System.out.println("you skip your attack to brace yourself greatly reducing damage taken");
+							thugdamage -= 2;
+								break;
+							case(3):if(healthpotion > 0){
+								System.out.println("you heal for five points of health");
+								Health += 5;
+								--healthpotion;
+								if (Health > health);
+								difference = Health - health;
+								Health -= difference;
+							}
+							else{
+								System.out.println("you have no health potions");
+							}
+							break;
+							}
+							System.out.println("thug hits you for " + thugdamage);
+							Health -= thugdamage;
+							System.out.println("your health is " + Health + "\n" + "thugs health is " + thughealth);
+							
+							}while(Health > 0 && thughealth > 0);
+							Health = health;
+							thughealth = thugHealth;
+							int expthug = randomGenerator.nextInt(10) + 1;
+							exp += expthug;
+						}
+						System.out.println("Along your travels, you find a wounded dark elf leaning against a tree on the side of the path" + "\n" + "you can either 1. help him by giving him all of your health potions" + "\n" + "or you can 2. ignore him and keep your potions" + "\n" + "which shall it be");
+						 darkelffate = scanner.nextInt();
+						 if (darkelffate == 1){
+							 System.out.println("he takes the health potions as you sit with him. he thanks you and tells you he is forever in your debt and becomes your follower");
+							 money += 100;
+						 }
+						 else{
+							 System.out.println("you ignore him and carry on your way");
+						 }
+						 System.out.println("suddenly more thug come out");
+						 for(int i = 0; i < 4; ++i){
+								do{
+								int thugdamage = randomGenerator.nextInt(5) + 1;
+								int playerdamage = randomGenerator.nextInt(11) + 1;
+								
+								System.out.println("you have three options" + "\n" + "1. attack" + "\n"	+ "2. block" + "\n" + "3. heal");
+								int attack = scanner.nextInt();
+								switch (attack){
+								case(1):System.out.println("you hit the thug for" + playerdamage);
+									thughealth -= playerdamage;
+									break;
+								case(2):System.out.println("you skip your attack to brace yourself greatly reducing damage taken");
+								thugdamage -= 2;
+									break;
+								case(3):if(healthpotion > 0){
+									System.out.println("you heal for five points of health");
+									Health += 5;
+									if (Health > health);
+									difference = Health - health;
+									Health -= difference;
+								}
+								else{
+									System.out.println("you have no health potions");
+								}
+								break;
+								}
+								System.out.println("thug hits you for " + thugdamage);
+								Health -= thugdamage;
+								System.out.println("your health is " + Health + "\n" + "thugs health is " + thughealth);
+								
+								}while(Health > 0 && thughealth > 0);
+								Health = health;
+								thughealth = thugHealth;
+								int expthug = randomGenerator.nextInt(10) + 1;
+								exp += expthug;
+							}
+						System.out.println("you arrive in the city of Borgus, a busseling costal trading city.");
+						System.out.println("This city has five places of interest: the townhall, shop, gate, the arena, and the abandoned house");
+						do{	
+							System.out.println("where in town would you like to go");
+						answer3 = scanner.next();
+						
+						if(answer3 .equalsIgnoreCase("townhall")){
+							System.out.println("there are several quests available" + "\n" + "1. Clear path of borgus of goblin raiders" + "\n" + "2. Investigate abandoned house for unusual happenings" + "\n" + "3. visit the arena");
+							int quest = scanner.nextInt();
+							switch (quest){
+							case 1: System.out.println("go to the gate and go to the Path");
+								if (completion1 == 1){
+									System.out.println("Im glad I no longer have to worry about stolen imports heres $200");
+									money += 200;
+									completion1 = 0;
+								}
+								break;
+							case 2: System.out.println("there are strange happenings in that shack, weird wispers and strange hooded men");
+								if (completion1 == 1){
+									System.out.println("your back, what happened......Interesting i'll have it taken care of as soon as possible heres $500");
+									money += 500;
+									completion1 = 0;
+								}
+								break;
+							case 3: System.out.println("just go to the arena");
+								if (completion == 1){
+									System.out.println("interesting huh heres $50");
+									money += 50;
+									completion1 = 0;
+								}
+								break;
+							}
+							
+							}
+						if(answer3 .equals("shop")){
+							System.out.println("You enter the shop and read the menu" + "\n" + "1. Health Potion = 10" + "\n" + "2. Steel armour = 80" + "\n" + "3. Steel Longsword = 100");
+							int shop = scanner.nextInt();
+							switch(shop){
+							case 1: if(money >= 10){
+								System.out.println("done" + money);
+								++healthpotion;
+							}
+							else{
+								System.out.println("not enough funds");
+							}
+							break;
+							case 2:  if(money >= 80){
+								System.out.println("done" + money);
+								
+							}
+							else{
+								System.out.println("not enough funds");
+							}
+							break;
+							case 3:  if(money >= 100){
+								System.out.println("done" + money);
+							}
+							else{
+								System.out.println("not enough funds");
+							}
+							break;
+							}
+						}
+						if(answer3 .equals("arena")){
+							System.out.println("Welcome to the arena. This is a place where you can bet on fighters or put your self into a fight for a portion of total profit." + "\n" + "what will it be spectate or fight");
+							String arena = scanner.next();
+							if (arena .equals("spectate")){
+							bet = 0;
+							System.out.println("here are your contestents");
+							int Arena1Health = randomGenerator.nextInt(67) + 33;
+							
+							int Arena1strength = randomGenerator.nextInt(67) + 33;
+							System.out.println("contestent one... his health is " + Arena1Health +  " and his strength is " + Arena1strength);
+							int Arena2Health = randomGenerator.nextInt(67) + 33;
+							
+							int Arena2strength = randomGenerator.nextInt(67) + 33;
+							int Arena2health = Arena2Health;
+							int Arena2Strength = Arena2strength;
+							int Arena1health = Arena1Health;
+							int Arena1Strength = Arena1strength;
+							System.out.println("contestent two... his health is " + Arena2Health + " and his strength is " + Arena2strength);
+							System.out.println("who shall you put your money on ...1 or 2");
+							contestent = scanner.nextInt();
+							System.out.println("and how much will you put on his win");
+							bet = scanner.nextInt();
+							money -= bet;
+							System.out.println("let the fight begin");
+							do{
+								Arena2strength = Arena2Strength;
+								
+								Arena1strength = Arena1Strength;
+								
+								System.out.println("Choose something to shout");
+								String shout = scanner.next();
+								System.out.println(shout + " you shout into the noisy crowd");
+								
+								int quack = randomGenerator.nextInt(Arena1strength);
+								int quack2 = randomGenerator.nextInt(Arena2strength);
+								
+								int attack = randomGenerator.nextInt(3) + 1;
+								int attack1 = randomGenerator.nextInt(3) + 1;
+							switch (attack){
+								case(1):
+									if (attack1 == 2){
+										quack -= 30;
+										if (quack < 0){
+											quack = 0;
+										}
+									}
+									System.out.println("contestent 1 hit contestent 2 for " + quack);
+									Arena2Health -= quack;
+									break;
+								case(2):System.out.println("contestent one skips his attack to brace himself, greatly reducing damage taken");
+								quack2 -= 30;
+									break;
+								case(3):System.out.println("contestent one misses");
+								break;
+								}
+							
+							switch (attack1){
+								case(1):if (quack2 < 0){
+									quack2 = 0;
+									
+								}
+									System.out.println("contestent 2 hit contestent 1 for" + quack2);
+									Arena1Health -= quack2;
+									break;
+								case(2):System.out.println("contestent two skips his attack to brace himself, greatly reducing damage taken");
+								
+									break;
+								case(3):System.out.println("contestent two misses");
+								break;
+								
+								}
+							System.out.println("contestent 1's health is " + Arena1Health + "\n" + "contestent 2's health is " + Arena2Health);
+								}while(Arena1Health > 0 && Arena2Health > 0);
+							if (Arena2Health <= 0){
+								arenawin = 1;
+							}
+							
+							else{
+								arenawin = 2;
+							}
+							if(contestent == arenawin){
+								System.out.println("congratulations your money that you bid has now doubled");
+								bet *= 2;
+								money += bet;
+							}
+							else{
+								System.out.println("better luck next time");
+							}
+							
+						}
+						}
+						
+						
+					}while (!answer3.equals("gate"));
+					}
+		}
+	}
+			}
+}
